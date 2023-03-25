@@ -33,8 +33,7 @@
                         <label><i class="fa-solid fa-lock"></i></label>
                         <input type="password" id="PasswordInput" placeholder="Password">
                     </div>
-                    <label class="for">I agree with the terms and condition</label>
-                    <input type="checkbox" id="CheckBTN">
+                    
                     <button id="Submit">Submit</button>
                     <p class="Login">Already have an account? <a href="loginAuth.html">Log In</a></p>
              
@@ -104,26 +103,22 @@
                Email: Email.value,
                Password : Password.value
            }
-           if(checkBoxes.checked){
+        
             createUserWithEmailAndPassword(auth, obj.Email, obj.Password)
             .then(function(success) {
                 overlayOne.style.transform = "scale(1)";
-                window.location.replace ('loginAuth.html');
             })
             .catch(function(err) {
                 alert("error" + err) 
             })
             console.log(obj) 
-           } else if (Email.value == "" || Password.value == "" || firstName.value == "" || lastName.value == "") {
+            if (Email.value == "" || Password.value == "" || firstName.value == "" || lastName.value == "") {
             overlayTwo.style.transform = "scale(1)";
-           } else if(!checkBoxes.checked) {
-            overlayThree.style.transform = "scale(1)";
-           }
            
           };
 
           Close.addEventListener("click", () => {
-
+            window.location.replace('loginAuth.html');
             overlayOne.style.transform = "scale(0)";
           })
           CloseTwo.addEventListener("click", () => {
@@ -134,6 +129,8 @@
 
             overlayThree.style.transform = "scale(0)";
             })
+
+        }
 </script>
  
 </body>

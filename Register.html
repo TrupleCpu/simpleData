@@ -108,7 +108,7 @@
             createUserWithEmailAndPassword(auth, obj.Email, obj.Password)
             .then(function(success) {
                 overlayOne.style.transform = "scale(1)";
-                window.location.replcae ('loginAuth.html');
+                window.location.replace ('loginAuth.html');
             })
             .catch(function(err) {
                 alert("error" + err) 

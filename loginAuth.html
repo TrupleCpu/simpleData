@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/251144cd57.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="loginAuth.css">
+</head>
+<body>
+    <div class="container">
+        <form onsubmit="signin(event)">
+            <h3>Log In</h3>
+            <div class="input-field">
+                <label><i class="fa-sharp fa-solid fa-envelope"></i></label>
+                <input id="EmailInput"  type="email" placeholder="Email">
+            </div>
+            <div class="input-field">
+                <label><i class="fa-solid fa-lock"></i></label>
+                <input type="password" id="PasswordInput" placeholder="Password">
+            </div>
+            <button id="Log">Log In</button>
+               <p>Need an account? <a href="Register.html">Register</a></p>
+        </form>
+        <div class="User">
+            <div class="Users">
+                <i class="fa-solid fa-users"></i>
+            </div>
+            <p>Join thousands of user all over the world!</p>
+        </div>
+        <div class="overlay">
+            <div id="Overlay-S" class="overlay-1">
+                <button id="CloseBTN" class="Close-1"><i class="fa-solid fa-circle-xmark"></i></button>
+                <h1><i class="fa-solid fa-circle-check"></i> <span>Log In Successfully</span></h1>
+            </div>
+            <div id="Overlay-F" class="overlay-2">
+                <button id="CloseBTNtwo" class="Close-1"><i class="fa-solid fa-circle-xmark"></i></button>
+                <h1><i class="fa-sharp fa-solid fa-circle-exclamation"></i><span>Fill the forms!</span></h1>
+            </div>
+            </div>
+    </div>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-analytics.js";
+        import { getAuth, signInWithEmailAndPassword, } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDNkymf5lCE5sfIxjLvNdV79CNx3dE4V_E",
+            authDomain: "database-2c4ed.firebaseapp.com",
+            databaseURL: "https://database-2c4ed-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "database-2c4ed",
+            storageBucket: "database-2c4ed.appspot.com",
+            messagingSenderId: "743499503283",
+            appId: "1:743499503283:web:547a43ec52c10a1e6a82c6"
+        };
+
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+          const auth = getAuth();
+          const analytics = getAnalytics(app);
+         const email = document.getElementById("EmailInput");
+         const pass = document.getElementById("PasswordInput");
+         const logIn = document.getElementById("Log")
+        const overlayOne = document.getElementById("Overlay-S");
+        const closeOne = document.getElementById("CloseBTN");
+        const overlayTwo = document.getElementById("Overlay-F");
+        const closeTwo = document.getElementById("CloseBTNtwo");
+         window.signin = function(e){
+            e.preventDefault();
+
+            let obj = {
+                email: email.value,
+                pass: pass.value
+            }
+            signInWithEmailAndPassword(auth, obj.email, obj.pass)
+            .then(function (success) {
+                let user = (success.user.uid);
+                localStorage.setItem("uid", user)
+                overlayOne.style.transform = "scale(1)"
+            })
+            .catch(function (err) {
+                alert("login error" + err)
+            })
+
+            if(email.value == "" || pass.value == ""){
+               overlayTwo.style.transform = "scale(1)"
+            }
+         }
+
+         closeOne.addEventListener("click", () => {
+            overlayOne.style.transform = "scale(0)"
+         })
+         closeTwo.addEventListener("click", () => {
+            overlayTwo.style.transform = "scale(0)"
+         })
+</script>
+</body>
+</html>

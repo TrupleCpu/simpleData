@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" type="x icon" href="Logo-bag o.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML - Dictionary </title>
+    <script src="https://kit.fontawesome.com/251144cd57.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="HtmlDictionary.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <img src="Logo-bag o.png">
+            </div>
+            <div class="input-search">
+                <div class="erase-letters">
+                    <button onclick="erase()">X</button>
+                </div>
+                <input type="text" placeholder="Search for keywords...." id="input">
+            </div>
+            <div class="log-in">
+                <button>Log In</button>
+            </div>
+        </div>
+        <div class="side-bar">
+            <div class="HTML-elements">
+                <p><i class="fa-solid fa-caret-down"></i>  HTML elements </p>
+            </div>
+            <div class="Elements-container">
+                    <div class="Elements">
+                            <p id="Ahref">< a ></a>  
+                            <p id="Abbr">< abbr ></a>  
+                            <p id="address">< address ></a>
+                            <p id="area">< area ></a>
+                            <p id="article">< article ></a>  
+                            <p id="aside">< aside ></a>  
+                            <p id="audio">< audio ></a>
+                            <p id="b">< b ></a> 
+                            <p id="base">< base ></a>  
+                            <p id="bdi">< bdi ></a>  
+                            <p id="bdo">< bdo ></a>
+                            <p id="blockquote">< blockquote ></a>
+                            <p id="body">< body ></a>  
+                            <p id="br">< br ></a>  
+                            <p id="button">< button ></a>
+                            <p id="canvas">< canvas ></a>
+                            <p id="caption">< caption ></a>  
+                            <p id="cite">< cite ></a>  
+                            <p id="code">< code ></a>
+                            <p id="col">< col ></a> 
+                            <p id="colgroup">< colgroup ></a>  
+                            <p id="data">< data ></a>  
+                            <p id="datalist">< datalist ></a>
+                            <p id="dd">< dd ></a>
+                            <p id="del">< del ></a>  
+                            <p id="details">< details ></a>
+                            <p id="dfn">< dfn ></a>
+                            <p id="dialog">< dialog ></a>  
+                            <p id="div">< div ></a>  
+                            <p id="dl">< dl ></a>
+                            <p id="dt">< dt ></a> 
+                            <p id="em">< em ></a>  
+                            <p id="embeded">< embeded ></a>  
+                            <p id="fieldset">< fieldset ></a>
+                            <p id="figcaption">< figcaption ></a>
+                            <p id="figure">< figure ></a>
+                            <p id="footer">< footer ></a> 
+                            <p id="form">< form ></p>
+                            <p id="h1">< h1 ></p>   
+                            <p id="head">< head ></p>       
+                            <p id="header">< header ></p>   
+                            <p id="hgroup">< hgroup ></p>   
+                            <p id="hr">< hr ></p>   
+                            <p id="html">< html ></p>   
+                            <p id="i">< i ></p>   
+                            <p id="iframe">< iframe ></p>   
+                            <p id="img">< img ></p>   
+                            <p id="inputs">< input ></p>   
+                            <p id="ins">< ins ></p>   
+                            <p id="kbd">< kbd ></p>   
+                            <p id="label">< label ></p>   
+                            <p id="legend">< legend ></p>   
+                            <p id="li">< li ></p>   
+                            <p id="link">< link ></p>   
+                            <p id="main">< main ></p>   
+                            <p id="map">< map ></p>   
+                            <p id="mark">< mark ></p>   
+                            <p id="menu">< menu ></p>   
+                            <p id="meta">< meta ></p>   
+                            <p id="meter">< meter ></p>   
+                            <p id="nav">< nav ></p>   
+                            <p id="noscript">< noscript ></p>   
+                            <p id="object">< object ></p>   
+                            <p id="ol">< ol ></p>   
+                            <p id="optgroup">< optgroup ></p>   
+                            <p id="option">< option ></p>   
+                            <p id="output">< output ></p>   
+                            <p id="p">< p ></p>   
+                            <p id="picture">< picture ></p>   
+                            <p id="pre">< pre ></p>   
+                            <p id="progress">< progress ></p>   
+                            <p id="q">< q ></p>   
+                            <p id="rp">< rp ></p>   
+                            <p id="rt">< rt ></p>   
+                            <p id="ruby">< ruby ></p>   
+                            <p id="s">< s ></p>   
+                            <p id="samp">< samp ></p>   
+                            <p  id="script">< scr&#8203;ipt ></p>   
+                            <p id="section">< section ></p>   
+                            <p id="select">< select ></p>   
+                            <p id="slot">< slot ></p>   
+                            <p id="small">< small ></p>   
+                            <p id="source">< source ></p>   
+                            <p id="span">< span ></p>   
+                            <p id="strong">< strong ></p>   
+                            <p id="style">< style ></p>   
+                            <p id="sub">< sub ></p>   
+                            <p id="summary">< summary ></p>   
+                            <p id="sup">< sup ></p>   
+                            <p id="table">< table ></p>
+                            <p id="tbody">< tbody ></p>
+                            <p id="td">< td ></p>    
+                            <p id="template">< template ></p> 
+                            <p id="textarea">< textarea ></p> 
+                            <p id="tfoot">< tfoot ></p> 
+                            <p id="th">< th ></p> 
+                            <p id="thead">< thead ></p> 
+                            <p id="time">< time ></p> 
+                            <p id="title">< title ></p> 
+                            <p  id="tr">< tr ></p> 
+                            <p  id="track">< track ></p> 
+                            <p id="u">< u ></p> 
+                            <p id="ul">< ul ></p> 
+                            <p id="var">< var ></p> 
+                            <p id="video">< video ></p> 
+                            <p id="wbr">< wbr ></p> 
+                            </div>                                                           
+                </div>
+        </div>
+      <div class="word-container">
+       <div class="container-words">
+        
+  </div>
+    </div>
+        </div>
+    <script src="https://kit.fontawesome.com/251144cd57.js" crossorigin="anonymous"></script>
+    <script src="HtmlDictionary.js">
+    </script>
+</body>
+</html>
